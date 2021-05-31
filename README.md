@@ -37,13 +37,16 @@ done
 ```
 #!/bin/bash
 while ((1==1))
-do
-curl http://localhost:4757
-if [ $? -ne 0 ]
-then
-date >> curl.log
-fi
+        do
+                curl http://localhost:4757
+                if [ $? -ne 0 ]
+                        then
+                        date > curl.log
+                else
+                        echo "Service is Ok!";break
+                fi
 done
+
 ```
 ---
 
